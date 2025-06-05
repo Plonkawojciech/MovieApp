@@ -1,0 +1,72 @@
+.movie-grid {
+  display: flex;
+  flex-wrap: nowrap;        /* brak zawijania, wszystko w 1 linii */
+  overflow-x: auto;         /* poziomy scroll, jeśli karty wyjdą poza ekran */
+  gap: 1rem;                /* odstępy między kartami */
+  padding: 1rem;            /* trochę wewnętrznego marginesu */
+  min-height: 430px;
+  width: 100%;
+  box-sizing: border-box;   /* żeby padding nie zwiększał szerokości */
+  scroll-behavior: smooth;  /* płynne przewijanie */
+}
+.movie-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.home {
+    background-color: rgb(184, 188, 206);
+
+}
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  background-color: #8e94a9;
+  width: 370px;
+  border-radius: 8px;
+  padding: 20px;
+  
+}
+ .search-input {
+  border:none;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  font-size: 1rem;
+  transition: border 0.2s;
+  color:#222222;
+  background-color: #f4f1eb;
+  margin-right: 20px;
+}
+
+.search-input::placeholder {
+  color: black;
+}
+
+.search-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.search-button {
+  
+  font-size: 1rem;
+  text-decoration: none;
+  color: #222222;
+  transition: opacity 0.2s;
+  background: none;
+  border:none;
+  padding:5px;
+  border-radius: 8px;
+  background-color: #f4f1eb;
+}
+
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.section-heading {
+  margin-left: 30px;
+  font-size: 1.35rem;
+}
