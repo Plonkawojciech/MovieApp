@@ -3,14 +3,14 @@ import React, { useState } from "react";
 function MyAccount() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState('')
+  const [errors, setErrors] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log('logowanie', { username, password })
-    
+
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,11 @@ function MyAccount() {
   return (
     <div>
       <h2>Login Page</h2>
-      <div className="errors">{errors}</div>
+      {errors.length > 0 && (
+        <ul className="errors">
+          {errors.map((err, i) => <li key={i}>{err}</li>)}
+        </ul>
+      )}
       <form method="POST" onSubmit={handleSubmit}>
         <label htmlFor="email">Username</label>
         <input
